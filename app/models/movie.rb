@@ -2,6 +2,8 @@ class Movie < ApplicationRecord
   has_many :listings
   has_many :lists, through: :listings
 
+  validates :url, presence: true
+
   def find_existing_movie 
     Movie.where(url: self.sanitize_url).first
   end  
