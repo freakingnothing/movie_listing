@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'rest-client', '~> 2.1.0.rc1'
 gem 'nokogiri', '~> 1.10', '>= 1.10.3'
+gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
