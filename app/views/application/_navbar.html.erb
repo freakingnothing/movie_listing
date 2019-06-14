@@ -1,0 +1,10 @@
+<nav class='navbar sticky-top navbar-dark bg-dark'>
+  <%= link_to 'Movie Listing', root_path, class: 'navbar-brand' %>
+  <ul class="navbar-nav ml-auto navbar-rigth">
+    <% if user_signed_in? %>
+      <%= render 'signed_in' %>
+    <% else %>
+      <%= render 'signed_out'%>
+    <% end %>
+  </ul>  
+</nav>

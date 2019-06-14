@@ -1,0 +1,4 @@
+<li class="class-item"><%= current_user.email %></li>
+<li class="class-item"> <%= link_to 'Sign out', destroy_user_session_path,
+                            method: :delete,
+                            class: 'nav-link'%></li>
