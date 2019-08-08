@@ -28,11 +28,11 @@ class Scraper::KinopoiskScraper < Scraper::BaseScraper
   end
 
   def get_country
-    info["страна"].split(',').each {|word| word.strip!}.join(", ")
+    info["страна"].split(',').each {|word| word.strip!}.join(', ')
   end
 
   def get_genre
-    info["жанр"].split(',').map {|word| word.strip}[0...-1]
+    info["жанр"].split(',').map {|word| word.strip}[0...-1].join(', ')
   end
 
   def perform

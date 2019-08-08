@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <%= render 'movies/movies_table_thead'%>
+  <tbody>
+    <% @movies_in_progress.find_each.with_index do |movie, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+          <%= render movie %>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+

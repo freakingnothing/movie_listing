@@ -1,0 +1,12 @@
+<div class="mb-3 d-flex justify-content-between align-items-center">
+  <%= link_to 'Back', root_path, class: "btn btn-outline-secondary" %>
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#new-list">New list</button>
+  <%= render 'form', path: {controller: "lists", action: "create"} %>
+</div>
+
+<ul class="list-group">
+  <% @lists.each do |list| %>
+    <%= render list %>
+  <% end %>
+</ul>
+

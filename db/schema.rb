@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_112533) do
+ActiveRecord::Schema.define(version: 2019_07_17_134437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_112533) do
     t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "aasm_state"
     t.index ["list_id"], name: "index_listings_on_list_id"
     t.index ["movie_id"], name: "index_listings_on_movie_id"
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_112533) do
     t.datetime "updated_at", null: false
     t.string "mobile_url"
     t.string "country"
+    t.string "source"
   end
 
   create_table "users", force: :cascade do |t|

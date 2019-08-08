@@ -1,0 +1,23 @@
+<td><%= movie.original_title %></td>
+<td><%= movie.rus_title %></td>
+<td><%= movie.release_year %></td>
+<td><%= movie.genre %></td>
+<td><%= movie.country %></td>
+<td><%= movie.rating %></td>
+<td><a href="<%= movie.url %>" target="_blank">Go to <%= movie.source%></a></td>
+<td>
+  <div class="btn-group dropright">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu">
+      <% if movie.can_complete?(@list) %>
+        <%= link_to 'Complete', list_movie_complete_path(@list, movie), method: :post, class: "dropdown-item" %>
+      <% else %>
+        <%= link_to 'In progress', list_movie_complete_path(@list, movie), method: :post, class: "dropdown-item" %>
+      <% end %>
+      <div class="dropdown-divider"></div>
+      <%= link_to 'Remove', list_movie_path(@list, movie), method: :delete, class: "dropdown-item" %>
+    </div>
+  </div>
+</td>

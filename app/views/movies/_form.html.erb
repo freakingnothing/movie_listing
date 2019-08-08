@@ -1,0 +1,8 @@
+<%= form_with(model: [ @list, @list.movies.build ]) do |f|%>
+  <div class="input-group mb-3">
+    <%= f.text_field :url, class: "form-control", placeholder: "IMDb or Kinopoisk URL" %>
+    <div class="input-group-append">
+      <%= f.submit "Add", class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>

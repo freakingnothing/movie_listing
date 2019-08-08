@@ -16,6 +16,9 @@ gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'rest-client', '~> 2.1.0.rc1'
 gem 'nokogiri', '~> 1.10', '>= 1.10.3'
 gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'aasm', '~> 5.0', '>= 5.0.5'
+gem 'pagy', '~> 3.4', '>= 3.4.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,34 @@
+<div class="mb-3 d-flex justify-content-between align-items-center">
+  <%= link_to 'Back', lists_path, class: "btn btn-outline-secondary" %>
+  <%= link_to 'Delete the list', list_path,
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' },
+                             class: "btn btn-outline-dark" %>
+</div>
+
+<nav>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link <%= 'active' unless params[:active_tab] == 'movies_in_progress' || params[:active_tab] == 'movies_completed' %>" id="pills-movies-all-tab" data-toggle="tab" href="#pills-movies-all" role="tab" aria-controls="pills-movies-all" aria-selected="true">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link <%= 'active' if params[:active_tab] == 'movies_in_progress'%>" id="pills-movies-in-progress-tab" data-toggle="tab" href="#pills-movies-in-progress" role="tab" aria-controls="pills-movies-in-progress" aria-selected="false">In Progress</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link <%= 'active' if params[:active_tab] == 'movies_completed'%>" id="pills-movies-completed-tab" data-toggle="tab" href="#pills-movies-completed" role="tab" aria-controls="pills-movies-completed" aria-selected="false">Completed</a>
+    </li>
+  </div>
+</nav>
+<div class="tab-content col-12" id="pills-tabContent">
+  <div class="tab-pane fade <%= 'show active' unless params[:active_tab] == 'movies_in_progress' || params[:active_tab] == 'movies_completed' %>" id="pills-movies-all" role="tabpanel" aria-labelledby="pills-movies-all-tab">
+    <%= render 'movies/movies_all'%>
+  </div>
+  <div class="tab-pane fade <%= 'show active' if params[:active_tab] == 'movies_in_progress'%>" id="pills-movies-in-progress" role="tabpanel" aria-labelledby="pills-movies-in-progress-tab">
+    <%= render 'movies/movies_in_progress'%>
+  </div>
+  <div class="tab-pane fade <%= 'show active' if params[:active_tab] == 'movies_completed'%>" id="pills-movies-completed" role="tabpanel" aria-labelledby="pills-movies-completed-tab">
+    <%= render 'movies/movies_completed'%>
+  </div>
+  <%= render 'movies/form'%>
+</div>
+

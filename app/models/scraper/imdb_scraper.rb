@@ -20,7 +20,7 @@ class Scraper::ImdbScraper < Scraper::BaseScraper
   end
 
   def get_genre
-    info.css("span[itemprop='genre']").map {|name| name.text.downcase }
+    info.css("span[itemprop='genre']").map {|name| name.text.downcase }.join(', ')
   end
 
   def perform

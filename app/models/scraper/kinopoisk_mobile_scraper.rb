@@ -26,7 +26,7 @@ class Scraper::KinopoiskMobileScraper < Scraper::BaseScraper
   end
 
   def get_release_year
-    @info.css("span[class='movie-header__years']").text.strip  
+    @info.css("span[class='movie-header__years']").text.strip
   end
 
   def get_country
@@ -34,7 +34,7 @@ class Scraper::KinopoiskMobileScraper < Scraper::BaseScraper
   end
 
   def get_genre
-    @info.css("p[class='movie-header__genres']").text.split(', ')
+    @info.css("p[class='movie-header__genres']").text.strip
   end
 
   def perform

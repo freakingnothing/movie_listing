@@ -1,0 +1,35 @@
+<div class="mb-3 d-flex justify-content-between align-items-center">
+  <%= link_to 'Back', root_path, class: "btn btn-outline-secondary" %>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Original Title</th>
+      <th scope="col">Russian Title</th>
+      <th scope="col">Release Year</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Country</th>
+      <th scope="col">Rating</th>
+      <th scope="col">URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @completed_movies.find_each.with_index do |movie, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= movie.original_title %></td>
+        <td><%= movie.rus_title %></td>
+        <td><%= movie.release_year %></td>
+        <td><%= movie.genre %></td>
+        <td><%= movie.country %></td>
+        <td><%= movie.rating %></td>
+        <td><a href="<%= movie.url %>" target="_blank">Go to <%= movie.source%></a></td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
+
