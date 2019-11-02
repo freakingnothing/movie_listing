@@ -12,7 +12,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'devise', '~> 4.7'
 gem 'rest-client', '~> 2.1.0.rc1'
 gem 'nokogiri', '~> 1.10', '>= 1.10.3'
 gem 'bootstrap', '~> 4.3.1'
